@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <footer>
     <div id="contact">
       <h2>CONTACT</h2>
-    </div>
-    <footer>
+    </div>  
       <div class="footer-container">
         <div id="contact-form-container">
           <ContactForm></ContactForm>
         </div>
-        <div class="border-footer">
+        <div><!-- void -->
         </div>
         <div id="contact-adress-container">
           <div class="adress">
@@ -23,7 +22,7 @@
             </div>
           </div>
 
-          <div class="containerByCat">
+          <div class="social-container">
             <div class="social">
               <div> <a href="https://github.com/steveKac01?tab=repositories" target="_blank">
                   <font-awesome-icon icon="fab fa-github " size="3x" alt="github-icon" />
@@ -36,13 +35,11 @@
                 </a></div>
             </div>
           </div>
-          <div class="sumary">@ 2022 | <a href="mailto:kaci.steve@k-net.fr">Kaci.steve@k-net.fr</a>
+          <div class="copyright">@ 2022 | <a href="mailto:kaci.steve@k-net.fr">Kaci.steve@k-net.fr</a>
           </div>
         </div>
       </div>
-
-    </footer>
-  </div>
+  </footer>
 </template>
 
 <script>

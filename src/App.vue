@@ -5,8 +5,11 @@
 
     <div id="section">
       <ExperienceCompo :isDarkMode="this.isDarkMode"></ExperienceCompo>
-      <ProjetsCompo :isDarkMode="this.isDarkMode"></ProjetsCompo>
-
+    <!--  <ProjetsCompo :isDarkMode="this.isDarkMode"></ProjetsCompo>-->
+      <div id="projects">
+        <h1>PROJETS {{ this.isDarkMode ? "Theme NUIT" : "theme JOUR" }}</h1>
+  <router-view/>
+      </div>
     </div>
     <FooterPortfolio :isDarkMode="this.isDarkMode"></FooterPortfolio>
 
@@ -18,15 +21,15 @@ import NavBar from "./components/NavBar.vue"
 import IntroScene from "./components/IntroScene.vue"
 import FooterPortfolio from "./components/FooterPortfolio.vue"
 import ExperienceCompo from "./components/ExperienceCompo.vue"
-import ProjetsCompo from "./components/ProjetsCompo.vue"
+//import ProjetsCompo from "./components/ProjetsCompo.vue"
 
 export default {
   components: {
     NavBar,
     IntroScene,
     FooterPortfolio,
-    ExperienceCompo,
-    ProjetsCompo
+    ExperienceCompo
+   // ProjetsCompo
   },
   data: () => ({
     isDarkMode: false
@@ -46,7 +49,7 @@ export default {
 
 <style>
 #section {
-  padding: 20% 2% 5% 2%;
+  padding: 20% 0 5% 0;
 }
 
 h1 {
@@ -89,7 +92,7 @@ nav a.router-link-exact-active {
   --text_link: black;
   --alpha-background: rgba(5, 5, 5, 0.39);
   --error-color: red;
-  --text-focus:lightblue;
+  --text-focus: lightblue;
 }
 
 :root.dark-mode {
@@ -131,7 +134,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   #section {
-    padding: 20% 20% 5% 20%;
+    padding: 20% 17% 5% 17%;
   }
 }
 

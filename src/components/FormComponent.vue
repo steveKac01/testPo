@@ -59,13 +59,13 @@ export default {
             this.errors.email = false
         },
         isValid(value) {
-            if (value == '') {
+            value = value.trim();
+            if (value.trim() == '') {
                 return false
             }
             return value.length > 2
         },
         emailIsValid() {
-            // console.log(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.form.email));
             if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.form.email)) {
                 return true
             } else {
@@ -89,11 +89,6 @@ export default {
                 this.messageError = "Veuillez remplir tous les champs."
                 this.errors.email = true
             }
-            //Couper la
-            /*    if (!this.emailIsValid()) {
-                    this.messageError = "L'email est invalide."
-                    this.errors.email = true
-                }*/
             if (this.messageError == '') {
                 return true
             }
@@ -108,8 +103,14 @@ export default {
                         name: this.name,
                         email: this.email,
                         message: this.message
-                    })
-                    this.hideForm = true; // A TEST
+                    }).then((result) => {
+                          this.hideForm = true; 
+                          console.log("Email envoyé: "+result)
+                    }, (error) => {
+                        console.log("Une erreur est survenue: "+error.text);
+                         this.messageError = "Une erreur inconnue est survenue."
+                    });
+                  
                 } catch (error) {
                     this.messageError = "Une erreur inconnue est survenue, veuillez ressayer plus tard."
                 }

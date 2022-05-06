@@ -3,7 +3,7 @@
   <header>
     <div class="top-bar">
       <!--*todo* try to catch it without class-->
-      <div class="left-items"  @click="showHideSlideMenu()">
+      <div class="left-items" @click="showHideSlideMenu()">
         <div>
           <div id="burger">
             <font-awesome-icon icon="fas fa-bars " size="2x" />
@@ -26,18 +26,18 @@
       <div class="big-nav">
         <ul>
           <div>
-            <li><a href="#about">A PROPOS DE MOI</a></li>
+            <li @click="goAnchor('#about')">A PROPOS DE MOI</li>
           </div>
           <div>
-            <li><a href="#skills">EXPERIENCES</a></li>
-          </div>
-
-          <div>
-            <li><a href="#projects">PROJETS</a></li>
+            <li @click="goAnchor('#skills')">EXPERIENCES</li>
           </div>
 
           <div>
-            <li><a href="#contact">CONTACT</a></li>
+            <li @click="goAnchor('#projects')">PROJETS</li>
+          </div>
+
+          <div>
+            <li @click="goAnchor('#contact')">CONTACT</li>
           </div>
 
         </ul>
@@ -47,28 +47,26 @@
       <div id="test" class="hide">
         <div class="slide-cat">
           <ul>
-            <li><a href="#about">
-                
-                  <font-awesome-icon icon="fas fa-user-tie" />
-                 | A PROPOS DE MOI
-              </a></li>
+            <li @click="goAnchor('#about')">
+
+              <font-awesome-icon icon="fas fa-user-tie" />
+              | A PROPOS DE MOI
+            </li>
             <hr>
-            <li><a href="#skills">             
-                  <font-awesome-icon icon="fas fa-cog" />
-                 | COMPETENCES
-              </a></li>
+            <li @click="goAnchor('#skills')">
+              <font-awesome-icon icon="fas fa-cog" />
+              | COMPETENCES
+            </li>
             <hr>
-            <li><a href="#projects">
-                
-                  <font-awesome-icon icon="fas fa-folder " />
-                 | PROJETS
-              </a></li>
+            <li @click="goAnchor('#projects')">
+              <font-awesome-icon icon="fas fa-folder " />
+              | PROJETS
+            </li>
             <hr>
-            <li><a href="#contact">
-                
-                  <font-awesome-icon icon="fas fa-address-book" />
-                 | CONTACT
-              </a></li>
+            <li @click="goAnchor('#contact')">
+              <font-awesome-icon icon="fas fa-address-book" />
+              | CONTACT
+            </li>
           </ul>
         </div>
       </div>
@@ -87,6 +85,13 @@ export default {
   }),
 
   methods: {
+    goAnchor(selector) {
+      console.log(selector)
+      var anchor = document.querySelector(selector)
+       document.querySelector("#test").classList.toggle("hide")
+
+      window.scrollTo(0, anchor.offsetTop);
+    },
     showHideSlideMenu() {
       console.log("shut")
       let slideMini = document.querySelector("#test")
@@ -116,17 +121,13 @@ header {
 
 li:hover {
   color: var(--linkColor);
-
 }
 
 /*** SMALL NAV ***/
-.icone{
+.icone {
   display: inline;
   min-width: 30px;
- 
- 
 }
-
 
 .big-nav {
   display: none;
@@ -180,6 +181,7 @@ li:hover {
   padding: 10px 0;
   color: white;
   text-align: left;
+  cursor: pointer;
 }
 
 .slide-cat a {
@@ -200,7 +202,7 @@ li:hover {
 .left-items {
   display: flex;
   align-items: center;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .left-items>div,
@@ -209,7 +211,7 @@ li:hover {
   border-color: var(--background-footer);
   padding: 3px;
   border-radius: 20%;
-color: var(--background-footer);
+  color: var(--background-footer);
 }
 
 .right-items {
@@ -276,6 +278,7 @@ color: var(--background-footer);
   .big-nav li {
     display: inline;
     padding: 15px;
+    cursor: pointer;
   }
 
   .big-nav a {
@@ -288,7 +291,6 @@ color: var(--background-footer);
     text-decoration: none;
   }
 }
-
 
 /*icon test*/
 .right-items {

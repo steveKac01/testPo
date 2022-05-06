@@ -16,34 +16,48 @@ figcaption {
     padding: 5%;
     margin: 0;
 }
+
 img {
     opacity: 80%;
     transition: ease-out 1s;
 }
+
 .empty:hover img,
 figcaption {
     opacity: 100%;
     cursor: pointer;
 }
+
 .empty:hover img,
 .project img:hover {
     transform: scale(1.2);
 }
+
 .project {
     display: flex;
     justify-content: space-between;
     text-align: right;
     margin-bottom: 40px;
 }
+
 .project a {
-    background-color: var(--alpha-background);
-    color: var(--color-alpha);
+    background-color: var(--background-footer);
+    color: var(--text-focus);
     text-decoration: none;
-    padding: 6px 18px;
+    padding: 10px 22px;
     font-weight: bolder;
+    transition:all 1s;
 }
+
+.project a:hover {
+    background-color: var(--text-focus) ;
+    color: var(--background-footer);
+    transition:all 1s;
+}
+
 h4 {
     margin-top: 0;
+    font-size: 1.3rem;
 }
 
 .project:nth-last-of-type(even) {
@@ -71,4 +85,3 @@ img {
 .project-container {
     margin-bottom: 20px;
 }
-

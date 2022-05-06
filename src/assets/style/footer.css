@@ -1,28 +1,10 @@
-/*******************TO DELETE TO SET**************************/
-
-
-/****************************************************/
-
-footer {
+/*Main containers*/
+.footer-container {
   color: var(--background-color);
   background: var(--background-footer);
   padding: 20px 0 0 0;
-}
-
-.footer-container {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  justify-content: center;
-}
-
-.adress {
-  display: flex;
-  justify-content: center;
-}
-/* name */
-.adress>div {
-  text-align: left;
 }
 
 #contact-adress-container,
@@ -31,54 +13,101 @@ footer {
   padding: 20px 15%;
 }
 
-.containerByCat {
+.social-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+#contact {
+  text-align: center;
+}
+
+#contact h2 {
+  line-height: 0.6em;
+  font-size: 5em;
+  margin: 0;
+  color: var(--background-footer);
+}
+
+/* left column */
+.adress {
+  display: flex;
+  justify-content: center;
+}
+
+/* name offset*/
+.adress>div {
+  text-align: left;
+}
+
+.social {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.social a {
+  color: white;
+  transition: color 0.5s linear;
+}
+
+.social a:hover {
+  color: var(--text-focus);
+}
+
+.social div {
+  margin: 0 10px;
+}
+
 .copyright {
   color: white;
   font-size: 0.6em;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 15px 0;
+  text-align: center;
 }
 
 /* LINKS */
 footer a {
   color: var(--text-invert-color);
 }
+
 footer a:hover {
-  color: var(--text-invert-color);
+  color: var(--text-focus);
 }
+
 footer li {
   margin-bottom: 5px;
 }
-footer h4 {
-  color: var(--text-invert-color);
-  margin: 0;
-  text-transform: uppercase;
-}
-footer img {
-  width: 100%;
-}
+
 footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 input {
   width: 45%;
   border: none;
   border-bottom: white 2px solid;
   margin: 5px 0;
   outline: 0;
+  height: 2em;
+  color: var(--text-invert-color);
+  background: none;
 }
+
 input:first-of-type {
   margin-right: 10px;
 }
+
+textarea{
+  font: inherit; 
+  outline: 0;
+}
+
 input,
 textarea {
-  outline: 0;
-  font: inherit;
   display: inline;
   padding: 15px 0 0 0px;
   width: 100%;
@@ -88,36 +117,27 @@ textarea {
   background: none;
   border-bottom: white 2px solid;
 }
+
 ::placeholder {
   color: var(--text-invert-color);
 }
-input {
-  height: 2em;
-  color: var(--text-invert-color);
-  background: none;
-  border-bottom: white 2px solid;
-}
-#contact {
-  text-align: right;
-}
-#contact h2 {
-  line-height: 0.6em;
-  padding-right: 20px;
-  font-size: 5em;
-  margin: 0;
-  color: var(--background-footer);
-}
+
 li>h3 {
   padding: 0;
   margin-bottom: 0;
 }
-.border-footer{
+
+.footer-container >div:nth-of-type(2){
   display: none;
 }
-/****************************************************************/
-@media screen and (min-width: 768px) {
 
-  /*** DESKTOP ***/
+/************************** DESKTOP ******************************/
+@media screen and (min-width: 768px) {   
+  #contact {
+    text-align: right;
+    padding-right: 20px;
+  }
+
   .footer-container {
     flex-direction: row-reverse;
     justify-content: space-evenly;
@@ -136,12 +156,6 @@ li>h3 {
     flex-direction: column;
   }
 
-  /* PREFERENCES */
-  .copyright {
-    padding: 0 0 10px 0;
-    text-align: center;
-  }
-
   input,
   textarea {
     margin: 5px 0;
@@ -157,39 +171,15 @@ li>h3 {
     flex-direction: column;
     justify-content: space-between;
   }
-  .border-footer {
+
+  .footer-container >div:nth-of-type(2) {
     display: flex;
     flex-direction: column;
     flex-grow: 0 1;
     width: 1px;
-    border-left: white 1px dotted ;
+    border-left: white 1px dotted;
     margin-top: 10px;
     margin-bottom: 30px;
   }
-
-  /***END DESKTOP ***/
-}
-
-.sumary {
-  padding-bottom: 15px;
-  text-align: center;
-}
-
-.social {
-  display: flex;
-  padding: 20px 0;
-  justify-content: center;
-}
-
-.social a {
-  color:  white ;
-  transition: color 0.5s linear;
-}
-
-.social a:hover {
-  color: var(--text-focus) ;
-}
-
-.social div {
-  margin: 0 10px;
+/**************************END DESKTOP ******************************/
 }
