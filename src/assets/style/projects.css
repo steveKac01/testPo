@@ -85,3 +85,7 @@ img {
 .project-container {
     margin-bottom: 20px;
 }
+
+.desc-project >a{
+    cursor: pointer;
+}

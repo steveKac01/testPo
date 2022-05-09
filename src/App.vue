@@ -5,10 +5,10 @@
 
     <div id="section">
       <ExperienceCompo :isDarkMode="this.isDarkMode"></ExperienceCompo>
-    <!--  <ProjetsCompo :isDarkMode="this.isDarkMode"></ProjetsCompo>-->
+      <!--  <ProjetsCompo :isDarkMode="this.isDarkMode"></ProjetsCompo>-->
       <div id="projects">
         <h1>PROJETS {{ this.isDarkMode ? "Theme NUIT" : "theme JOUR" }}</h1>
-  <router-view/>
+        <router-view />
       </div>
     </div>
     <FooterPortfolio :isDarkMode="this.isDarkMode"></FooterPortfolio>
@@ -29,7 +29,7 @@ export default {
     IntroScene,
     FooterPortfolio,
     ExperienceCompo
-   // ProjetsCompo
+    // ProjetsCompo
   },
   data: () => ({
     isDarkMode: false
@@ -134,7 +134,13 @@ h1 {
 
 @media screen and (min-width: 768px) {
   #section {
-    padding: 20% 17% 5% 17%;
+    padding: 20% 5% 5% 5%;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  #section {
+    padding: 20% 15% 5% 17%;
   }
 }
 
